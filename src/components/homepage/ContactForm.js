@@ -18,7 +18,6 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add your form submission logic here (e.g., sending the form data to the server)
-    console.log(formData);
     // Reset form fields after submission
     setFormData({
       name: "",
@@ -29,11 +28,11 @@ const ContactForm = () => {
 
   return (
     <div className="bg-black text-black py-10">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-semibold text-center mb-8">Contact Us</h2>
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-semibold text-center mb-8 text-white">Contact Us</h2>
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
           <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 font-semibold">
+            <label htmlFor="name" className="block text-white font-semibold">
               Name
             </label>
             <input
@@ -47,10 +46,7 @@ const ContactForm = () => {
             />
           </div>
           <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-gray-700 font-semibold"
-            >
+            <label htmlFor="email" className="block text-white font-semibold">
               Email
             </label>
             <input
@@ -64,10 +60,7 @@ const ContactForm = () => {
             />
           </div>
           <div className="mb-4">
-            <label
-              htmlFor="message"
-              className="block text-gray-700 font-semibold"
-            >
+            <label htmlFor="message" className="block text-white font-semibold">
               Message
             </label>
             <textarea

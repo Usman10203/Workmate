@@ -15,7 +15,7 @@ const Login = () => {
 
   const loginFormSubmitted = async (event) => {
     event.preventDefault();
-    console.log(loginData);
+
     if (loginData.email.trim() === "" || loginData.password.trim() === "") {
       toast.info("Invalid Data !!", {
         position: "top-center",
@@ -28,7 +28,7 @@ const Login = () => {
 
     try {
       const result = await login(loginData);
-      console.log(result);
+
       toast.success("Logged In");
       //redirect
       context.setUser(result.user);
@@ -42,7 +42,7 @@ const Login = () => {
   };
 
   return (
-    <div className="grid grid-cols-12 mb-[210px]">
+    <div className="grid grid-cols-12 mb-[330px]">
       <div className="col-span-8 col-start-3 md:col-span-4  md:col-start-5 p-5  shadow-sm ">
         <div className="py-5"></div>
 

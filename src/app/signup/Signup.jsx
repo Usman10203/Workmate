@@ -17,8 +17,7 @@ const Signup = () => {
   const doSignup = async (event) => {
     event.preventDefault();
 
-    console.log(event);
-    console.log(data);
+
     if (data.name.trim() === "" || data.name == null) {
       toast.warning("Name is required !!", {
         position: "top-center",
@@ -32,8 +31,6 @@ const Signup = () => {
     // form submit
     try {
       const result = await signUp(data);
-
-      console.log(result);
 
       toast.success("User is registered !!", {
         position: "top-center",

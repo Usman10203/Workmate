@@ -13,7 +13,7 @@ const UserProvider = ({ children }) => {
     async function load() {
       try {
         const tempUser = await currentUser();
-        console.log(tempUser);
+        toast.success('Current User Api called')
         setUser({ ...tempUser });
       } catch (error) {
         console.log(error);

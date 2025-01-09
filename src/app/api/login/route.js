@@ -6,7 +6,6 @@ import { connectDb } from "@/helper/db";
 
 export async function POST(request) {
   await connectDb();
-  console.log("login api");
   const { email, password } = await request.json();
 
   try {
@@ -44,12 +43,9 @@ export async function POST(request) {
     });
 
     response.cookies.set("authToken", token, {
-      expiresIn: "1d",
+      expiresIn: "7d",
       httpOnly: true,
     });
-
-    console.log(user);
-    console.log(token);
 
     return response;
   } catch (error) {

@@ -3,7 +3,7 @@ import { FiCheckCircle, FiList, FiCalendar } from "react-icons/fi";
 
 const FeatureSection = () => {
   return (
-    <div className="bg-black text-white py-12">
+    <div className="bg-black text-white py-12 px-10">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-semibold text-center mb-8">
           Features of Task Manager

@@ -17,7 +17,7 @@ const ActionSection = () => {
           className="bg-white text-blue-500 py-3 px-6 rounded-md shadow-md hover:shadow-lg transition duration-300"
           onClick={() => {
             // Add your action button click event handler logic here
-            console.log("Get Started button clicked!");
+
           }}
         >
           Get Started

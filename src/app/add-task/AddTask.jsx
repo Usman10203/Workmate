@@ -6,23 +6,20 @@ import { addTask } from "@/services/taskService";
 import { taost, toast } from "react-toastify";
 
 const AddTask = () => {
-  // console.log("this is add task component");
 
   const [task, setTask] = useState({
     title: "",
     content: "",
     status: "none",
     // temp solution
-    userId: "64a506ab413f1d5bcafcdbec",
+    //userId: "64a506ab413f1d5bcafcdbec",
   });
 
   const handleAddTask = async (event) => {
     event.preventDefault();
-    console.log(task);
     // validate task data
     try {
       const result = await addTask(task);
-      console.log(result);
       toast.success("Your task is added !!", {
         position: "top-center",
       });

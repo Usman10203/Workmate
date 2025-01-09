@@ -6,10 +6,11 @@ import { NextResponse } from "next/server";
 import { connectDb } from "@/helper/db";
 
 export async function GET(request, { params }) {
-  await connectDb();
+
   const { userId } = params;
 
   try {
+    await connectDb();
     // get user using id
 
     const tasks = await Task.find({

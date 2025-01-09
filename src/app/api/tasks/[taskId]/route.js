@@ -4,10 +4,11 @@ import { getResponseMessage } from "@/helper/responseMessage";
 import { Task } from "@/models/task";
 import { NextResponse } from "next/server";
 
-connectDb();
+
 
 // get single tasks
 export async function GET(request, { params }) {
+  await connectDb();
   const { taskId } = params;
 
   try {

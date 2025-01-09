@@ -2,10 +2,11 @@ import { connectDb } from "@/helper/db";
 import { User } from "@/models/user";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-connectDb();
+
 
 // get request function
 export async function GET(request) {
+  await connectDb();
   let users = [];
   try {
     users = await User.find().select("-password");
@@ -27,8 +28,6 @@ export async function POST(request) {
   // fetch user detail from  request
 
   const { name, email, password, about, profileURL } = await request.json();
-
-  console.log({ name, email, password, about, profileURL });
 
   // create user object with user model
 

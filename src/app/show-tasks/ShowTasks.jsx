@@ -10,11 +10,11 @@ const ShowTasks = () => {
   const context = useContext(UserContext);
   async function loadTasks(userId) {
     try {
-      console.log(`userId`, userId);
+
       const tasks = await getTasksOfUser(userId);
-      console.log(`tasksss`, tasks);
+
       setTasks([...tasks].reverse());
-      console.log('tasks', tasks);
+
     } catch (error) {
       console.log(error);
     }
@@ -22,6 +22,7 @@ const ShowTasks = () => {
 
   useEffect(() => {
     if (context.user) {
+
       loadTasks(context.user._id);
     }
   }, [context.user]);
@@ -29,7 +30,7 @@ const ShowTasks = () => {
   async function deleteTaskParent(tasksId) {
     try {
       const result = await deleteTask(tasksId);
-      console.log(result);
+
       const newTasks = tasks.filter((item) => item._id != tasksId);
       setTasks(newTasks);
       toast.success("Your task is deleted ");
@@ -42,7 +43,7 @@ const ShowTasks = () => {
   return (
     <div className="grid grid-cols-12 mt-3">
       <div className="col-span-6 col-start-4">
-        <h1 className="text-3xl mb-3 ">Your tasks ( {tasks.length} )</h1>
+        <h1 className="text-3xl mb-10 text-center ">Your tasks ( {tasks.length} )</h1>
 
         {tasks.map((task) => (
           <Task

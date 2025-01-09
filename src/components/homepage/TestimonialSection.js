@@ -50,21 +50,42 @@ const testimonials = [
   // Add more testimonials as needed
 ];
 
+
 const TestimonialSection = () => {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // Display 3 testimonials at once
+    slidesToShow: 3, // Default for large screens
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 1024, // For medium screens
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768, // For small screens like tablets
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480, // For extra-small screens like phones
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
     <div className="bg-gray-800 py-10">
       <div className="mx-auto">
-        <h2 className="text-3xl font-semibold text-center mb-8">
+        <h2 className="text-3xl font-semibold text-center mb-8 text-white">
           Testimonials
         </h2>
         <div className="max-w-5xl mx-auto">
